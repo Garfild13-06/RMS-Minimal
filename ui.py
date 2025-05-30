@@ -74,7 +74,7 @@ with st.sidebar:
     except Exception as e:
         logger.error(f"Неожиданная ошибка при получении списка клиентов: {e}")
         st.error(f"Неожиданная ошибка: {e}")
-        clients = {}
+    clients = {}
 
     # Создаем селектор хостов
     hostnames = list(clients.keys())
