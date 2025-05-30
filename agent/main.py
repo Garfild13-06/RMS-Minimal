@@ -6,7 +6,7 @@ import subprocess
 import platform
 import json
 import logging
-from agent_config import *
+from config_agent import *
 
 # Настройка логирования
 logging.basicConfig(

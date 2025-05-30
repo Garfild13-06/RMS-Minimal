@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Dict, List
 import uvicorn, time
 import logging
-from server_config import *
+from config_server import *
 
 # Настройка логирования
 logging.basicConfig(

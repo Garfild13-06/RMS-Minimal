@@ -1,2 +1,8 @@
 logs/*
+agent/logs/*
+server/logs/*
+ui/logs/*
 __pycache__/*
+agent/__pycache__/*
+server/__pycache__/*
+ui/__pycache__/*

@@ -4,8 +4,7 @@ import json
 from streamlit_autorefresh import st_autorefresh
 import time
 import logging
-from config import *
-from server_config import *
+from config_ui import *
 
 # Настройка логирования
 logging.basicConfig(
@@ -61,6 +60,7 @@ with st.sidebar:
     st.header("Выбор хоста")
     
     # Получаем список клиентов
+    clients = {}  # Инициализируем переменную перед try
     try:
         logger.info(f"Запрос списка клиентов с {SERVER_URL}/ui/get_clients")
         response = requests.get(f"{SERVER_URL}/ui/get_clients", timeout=AGENT_TIMEOUT)
@@ -70,11 +70,9 @@ with st.sidebar:
     except requests.exceptions.RequestException as e:
         logger.error(f"Ошибка получения списка клиентов: {e}")
         st.error(f"Ошибка получения списка клиентов: {e}")
-        clients = {}
     except Exception as e:
         logger.error(f"Неожиданная ошибка при получении списка клиентов: {e}")
         st.error(f"Неожиданная ошибка: {e}")
-    clients = {}
 
     # Создаем селектор хостов
     hostnames = list(clients.keys())
